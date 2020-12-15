@@ -1,0 +1,50 @@
+# Countdown-in-Javascript
+//index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval</title>
+</head>
+<body >
+    <div >
+        <img id="temp2" src='templates/img1.jpg' alt="vectorbackground" >
+        <h1 id="temp1">10</h1>
+    </div>
+    <script src="interval.js"></script>
+</body>
+</html
+  
+  
+//style.html  
+
+body {
+   /* background-image: url('templates/img1.jpg'); */
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 100%;
+   background-position: 0%;
+   text-align:center;
+   background-attachment: fixed;
+   
+}
+
+//interval.js
+
+console.clear();
+var countdownElement= document.getElementById('temp1') ;
+var initialCoundownVal= countdownElement.innerHTML;
+var imageElement = document.getElementById('temp2');
+
+setInterval(function(){
+    initialCoundownVal=initialCoundownVal>0 ? initialCoundownVal-1 : 0;
+
+    countdownElement.innerHTML=initialCoundownVal;
+    
+    var imgPath = initialCoundownVal % 2 === 0 ? 'templates/img1.jpg':'templates/img2.jpg';
+    imageElement.src =imgPath;
+ 
+},1000);
